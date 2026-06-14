@@ -10,7 +10,14 @@
 body {
   font-family: 'Playfair Display', serif;
   background-color: var(--parchment);
-  background-image: radial-gradient(circle, #f9f5ed 0%, #e8dbbc 100%);
+  
+  /* Layer 1: The soft vignette shadow */
+  /* Layer 2: The repeating sunburst rays using a faded gold */
+  background-image: 
+    radial-gradient(circle, rgba(249, 245, 237, 0.4) 0%, rgba(232, 219, 188, 0.9) 100%),
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(196, 155, 71, 0.08) 0deg 9deg, transparent 9deg 18deg);
+  background-attachment: fixed; /* Keeps the rays anchored in place when you scroll! */
+  
   color: var(--text-dark);
   margin: 0;
   padding: 0;
