@@ -98,6 +98,8 @@ form {
   max-width: 400px;
   margin: 0 auto;
   text-align: left;
+  padding: 0 15px; /* Adds breathing room on the left and right */
+  box-sizing: border-box; /* Ensures the padding doesn't accidentally widen the form */
 }
 
 label {
@@ -139,20 +141,19 @@ button.submit-btn:hover {
 
 /* --- Premium 3D Vertical Ticket RSVP Design --- */
 .ticket {
-  /* Subtle gradient to mimic thick cardstock lighting */
   background: linear-gradient(135deg, #ffffff 0%, #f4ebd8 100%);
   border: 2px solid var(--circus-gold);
   border-radius: 12px;
   padding: 40px 25px;
   margin: 20px auto;
   max-width: 450px;
+  width: 85%; /* Ensures the ticket shrinks gracefully on phones */
   position: relative;
-  /* Multi-layered shadow for a realistic 3D lift off the page */
   box-shadow: 
     0 20px 40px rgba(0,0,0,0.25), 
     0 5px 15px rgba(0,0,0,0.1),
-    inset 0 0 40px rgba(140, 33, 33, 0.05); /* Slight warm inner shadow */
-  overflow: hidden; /* Keeps the watermark from spilling out */
+    inset 0 0 40px rgba(140, 33, 33, 0.05); 
+  overflow: hidden; 
   z-index: 10;
 }
 
