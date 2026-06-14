@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --parchment: #f4ecd8;
+  --circus-red: #8c2121;
+  --circus-gold: #c49b47;
+  --text-dark: #332f2c;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: var(--parchment);
+  background-image: radial-gradient(circle, #f9f5ed 0%, #e8dbbc 100%);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px; 
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background-color: transparent;
+  border-left: 4px solid var(--circus-gold);
+  border-right: 4px solid var(--circus-gold);
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: var(--circus-red);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  border-bottom: 3px dashed var(--circus-gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--parchment);
+  font-family: 'Rye', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav button:hover, nav button.active {
+  color: var(--circus-gold);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.view-section {
+  display: none; 
+  padding: 30px 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.view-section.active {
+  display: block; 
+}
+
+#view-invite {
+  padding: 10px;
+  text-align: center;
+}
+
+#invite-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid var(--circus-gold);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  font-family: 'Rye', cursive;
+  color: var(--circus-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 { font-size: 1.8rem; border-bottom: 2px solid var(--circus-gold); padding-bottom: 10px; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  color: var(--circus-red);
+}
+
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--circus-gold);
+  background-color: #fffaf0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button.submit-btn {
+  background-color: var(--circus-red);
+  color: var(--parchment);
+  font-family: 'Rye', cursive;
+  font-size: 1.5rem;
+  padding: 15px;
+  border: 2px solid var(--circus-gold);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+
+button.submit-btn:hover {
+  transform: scale(1.05);
+}
+
+#form-message {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
