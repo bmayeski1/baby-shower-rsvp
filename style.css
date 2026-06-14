@@ -79,8 +79,7 @@ nav button:hover, nav button.active {
   height: auto;
   display: block;
   margin: 0 auto;
-  border: 3px solid var(--circus-gold);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  /* Borders and shadows removed so it floats cleanly */
 }
 
 h1, h2, h3 {
@@ -136,4 +135,55 @@ button.submit-btn:hover {
   margin-top: 20px;
   font-weight: bold;
   text-align: center;
+}
+
+/* --- Vertical Ticket RSVP Design --- */
+.ticket {
+  background-color: #fffaf0; /* Slightly lighter than the background to pop */
+  border: 2px dashed var(--circus-red);
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin: 10px auto;
+  max-width: 350px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Creating the ticket "cutouts" on the sides */
+.ticket::before, .ticket::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--parchment); /* Matches the app background to look like a hole */
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket::before { 
+  left: -22px; 
+  border-right: 2px dashed var(--circus-red); 
+}
+.ticket::after { 
+  right: -22px; 
+  border-left: 2px dashed var(--circus-red); 
+}
+
+.ticket-header {
+  text-align: center;
+  border-bottom: 2px solid var(--circus-gold);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.ticket-header h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  border-bottom: none; /* Overrides the default h2 border */
+}
+
+/* Ensure the form fits nicely inside the ticket */
+.ticket form {
+  gap: 20px;
 }
