@@ -31,8 +31,8 @@ body {
   max-width: 600px; 
   min-height: 100vh;
   box-shadow: 0 0 40px rgba(0,0,0,0.4); 
-  /* Shifted from the white tint to a warm, browner vintage paper tone */
-  background-color: #e8d6b3; 
+  /* The "Goldilocks" parchment: right between white and brown */
+  background-color: #f2e8d3; 
   border-left: 4px solid var(--circus-gold);
   border-right: 4px solid var(--circus-gold);
   display: flex;
