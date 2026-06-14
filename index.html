@@ -99,35 +99,60 @@
         <h2>The Fairgrounds</h2>
         
         <!-- Custom Vector Circus Tent -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="130px" height="130px" style="margin: 15px 0; filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));">
-          <!-- Flagpole & Flag -->
-          <line x1="50" y1="22" x2="50" y2="4" stroke="var(--text-dark)" stroke-width="2" />
-          <polygon points="50,4 70,12 50,20" fill="var(--circus-gold)" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="160px" height="160px" style="margin: 15px 0; filter: drop-shadow(4px 8px 10px rgba(0,0,0,0.25));">
           
-          <!-- Main Tent Base -->
-          <polygon points="15,55 85,55 80,95 20,95" fill="var(--parchment)" />
+          <ellipse cx="50" cy="95" rx="45" ry="8" fill="rgba(0,0,0,0.1)" />
+          <ellipse cx="50" cy="95" rx="35" ry="4" fill="rgba(0,0,0,0.15)" />
+
+          <polygon points="20,95 80,95 85,55 15,55" fill="var(--parchment)" />
           
-          <!-- Red Base Stripes -->
-          <polygon points="15,55 30,55 28,95 18,95" fill="var(--circus-red)" />
-          <polygon points="70,55 85,55 82,95 72,95" fill="var(--circus-red)" />
+          <polygon points="15,55 25,55 23,95 18,95" fill="var(--circus-red)" />
+          <polygon points="35,55 65,55 62,95 38,95" fill="var(--circus-red)" />
+          <polygon points="75,55 85,55 82,95 77,95" fill="var(--circus-red)" />
+
+          <path d="M 40,95 L 40,70 A 10,10 0 0,1 60,70 L 60,95 Z" fill="#2a0c0c" />
           
-          <!-- Tent Door/Entrance -->
-          <path d="M 40,95 L 40,75 A 10,10 0 0,1 60,75 L 60,95 Z" fill="var(--text-dark)" />
+          <path d="M 40,70 Q 32,85 28,95 L 40,95 Z" fill="var(--circus-gold)" />
+          <path d="M 60,70 Q 68,85 72,95 L 60,95 Z" fill="var(--circus-gold)" />
           
-          <!-- Tent Roof -->
-          <polygon points="50,22 10,55 90,55" fill="var(--parchment)" />
+          <polygon points="15,55 50,55 50,95 20,95" fill="#ffffff" opacity="0.25" />
+          <polygon points="50,55 85,55 80,95 50,95" fill="#000000" opacity="0.25" />
+
+          <line x1="50" y1="15" x2="5" y2="85" stroke="var(--text-dark)" stroke-width="0.75" />
+          <line x1="3" y1="83" x2="8" y2="88" stroke="var(--circus-gold)" stroke-width="2" stroke-linecap="round" />
+          <line x1="50" y1="15" x2="95" y2="85" stroke="var(--text-dark)" stroke-width="0.75" />
+          <line x1="97" y1="83" x2="92" y2="88" stroke="var(--circus-gold)" stroke-width="2" stroke-linecap="round" />
+
+          <polygon points="50,15 8,55 92,55" fill="var(--parchment)" />
           
-          <!-- Red Roof Stripes -->
-          <polygon points="50,22 40,55 60,55" fill="var(--circus-red)" />
-          <polygon points="50,22 10,55 25,55" fill="var(--circus-red)" />
-          <polygon points="50,22 75,55 90,55" fill="var(--circus-red)" />
+          <polygon points="50,15 10,55 22,55" fill="var(--circus-red)" />
+          <polygon points="50,15 36,55 64,55" fill="var(--circus-red)" />
+          <polygon points="50,15 78,55 90,55" fill="var(--circus-red)" />
+
+          <polygon points="50,15 8,55 50,55" fill="#ffffff" opacity="0.2" />
+          <polygon points="50,15 92,55 50,55" fill="#000000" opacity="0.2" />
+
+          <g filter="drop-shadow(0px 3px 2px rgba(0,0,0,0.3))">
+            <path d="M 8,55 A 7,7 0 0,0 22,55 Z" fill="var(--circus-red)" />
+            <path d="M 22,55 A 7,7 0 0,0 36,55 Z" fill="var(--parchment)" />
+            <path d="M 36,55 A 7,7 0 0,0 50,55 Z" fill="var(--circus-red)" />
+            <path d="M 50,55 A 7,7 0 0,0 64,55 Z" fill="var(--parchment)" />
+            <path d="M 64,55 A 7,7 0 0,0 78,55 Z" fill="var(--circus-red)" />
+            <path d="M 78,55 A 7,7 0 0,0 92,55 Z" fill="var(--parchment)" />
+            <path d="M 8,55 A 7,7 0 0,0 22,55 A 7,7 0 0,0 36,55 A 7,7 0 0,0 50,55 A 7,7 0 0,0 64,55 A 7,7 0 0,0 78,55 A 7,7 0 0,0 92,55" fill="none" stroke="var(--circus-gold)" stroke-width="1.5" />
+          </g>
+
+          <line x1="50" y1="18" x2="50" y2="2" stroke="var(--text-dark)" stroke-width="2" />
+          <circle cx="50" cy="2" r="2.5" fill="var(--circus-gold)" />
           
-          <!-- Gold Trim/Scallops along the roof line -->
-          <path d="M 10,55 Q 15,60 20,55 Q 25,60 30,55 Q 35,60 40,55 Q 45,60 50,55 Q 55,60 60,55 Q 65,60 70,55 Q 75,60 80,55 Q 85,60 90,55" fill="none" stroke="var(--circus-gold)" stroke-width="3" stroke-linecap="round" />
+          <polygon points="50,4 62,8 50,12" fill="#5c1515" />
+          <polygon points="50,4 72,6 62,10 50,14" fill="var(--circus-red)" />
+
+          <circle cx="50" cy="38" r="6" fill="var(--circus-gold)" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.2))" />
+          <polygon points="50,33 52,36 55,36 53,39 54,42 50,40 46,42 47,39 45,36 48,36" fill="var(--parchment)" />
           
-          <!-- Gold Star on the roof -->
-          <polygon points="50,36 52,41 58,41 53,45 55,51 50,47 45,51 47,45 42,41 48,41" fill="var(--circus-gold)" />
         </svg>
+        
         <p style="font-size: 1.2rem; margin-bottom: 25px;">
           <strong>The Caravantes Household</strong><br>
           28387 Cottage Way<br>Murrieta, CA 92563
