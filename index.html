@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Greatest Shower on Earth - RSVP</title>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+      :root {
+        --parchment: #f4ecd8;
+        --circus-red: #8c2121;
+        --circus-gold: #c49b47;
+        --text-dark: #332f2c;
+      }
+
+      body {
+        font-family: 'Playfair Display', serif;
+        background-color: var(--parchment);
+        background-image: radial-gradient(circle, #f9f5ed 0%, #e8dbbc 100%);
+        color: var(--text-dark);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .app-container {
+        width: 100%;
+        max-width: 600px; 
+        min-height: 100vh;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        background-color: transparent;
+        border-left: 4px solid var(--circus-gold);
+        border-right: 4px solid var(--circus-gold);
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav {
+        background-color: var(--circus-red);
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 0;
+        border-bottom: 3px dashed var(--circus-gold);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav button {
+        background: none;
+        border: none;
+        color: var(--parchment);
+        font-family: 'Rye', cursive;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      nav button:hover, nav button.active {
+        color: var(--circus-gold);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      }
+
+      .view-section {
+        display: none; 
+        padding: 30px 20px;
+        text-align: center;
+        flex-grow: 1;
+      }
+
+      .view-section.active {
+        display: block; 
+      }
+
+      #view-invite {
+        padding: 10px;
+        text-align: center;
+      }
+
+      #invite-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border: 3px solid var(--circus-gold);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      h1, h2, h3 {
+        font-family: 'Rye', cursive;
+        color: var(--circus-red);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      h2 { font-size: 1.8rem; border-bottom: 2px solid var(--circus-gold); padding-bottom: 10px; }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      label {
+        font-weight: bold;
+        color: var(--circus-red);
+      }
+
+      input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid var(--circus-gold);
+        background-color: #fffaf0;
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      button.submit-btn {
+        background-color: var(--circus-red);
+        color: var(--parchment);
+        font-family: 'Rye', cursive;
+        font-size: 1.5rem;
+        padding: 15px;
+        border: 2px solid var(--circus-gold);
+        cursor: pointer;
+        margin-top: 10px;
+        transition: transform 0.2s;
+      }
+
+      button.submit-btn:hover {
+        transform: scale(1.05);
+      }
+
+      #form-message {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="app-container">
+      
+      <nav>
+        <button class="active" onclick="switchView('view-invite')">Invite</button>
+        <button onclick="switchView('view-rsvp')">RSVP</button>
+        <button onclick="switchView('view-registry')">Registry</button>
+        <button onclick="switchView('view-location')">Location</button>
+      </nav>
+
+      <div id="view-invite" class="view-section active">
+        <img id="invite-image" src="https://i.imgur.com/yda7tYT.jpg" alt="Baby Shower Invitation">
+      </div>
+
+      <div id="view-rsvp" class="view-section">
+        <h2>Admit One (or more!)</h2>
+        <p><em>Admission tickets close by<br>Sunday, August 16th, 2026</em></p>
+        
+        <form id="rsvp-form">
+          <div>
+            <label for="guestName">Name(s):</label>
+            <input type="text" id="guestName" required placeholder="John & Jane Doe">
+          </div>
+          
+          <div>
+            <label for="isAttending">Will you be joining the circus?</label>
+            <select id="isAttending" required>
+              <option value="" disabled selected>Select an option...</option>
+              <option value="Yes">Yes, wouldn't miss it!</option>
+              <option value="No">No, sadly I cannot attend.</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="guestCount">Total number in your party:</label>
+            <input type="number" id="guestCount" required min="0" max="10" placeholder="1">
+          </div>
+
+          <button type="submit" id="submit-btn" class="submit-btn">Submit RSVP</button>
+        </form>
+        <div id="form-message"></div>
+      </div>
+
+      <div id="view-registry" class="view-section">
+        <h2>Baby Registry</h2>
+        <p>Your presence is the greatest gift, but if you'd like to help us prepare for our little peanut, you can find our registries below:</p>
+        <p>
+          <a href="#" style="color: var(--circus-red); font-weight: bold; font-size: 1.2rem;">Target Registry</a><br><br>
+          <a href="#" style="color: var(--circus-red); font-weight: bold; font-size: 1.2rem;">Amazon Registry</a>
+        </p>
+      </div>
+
+      <div id="view-location" class="view-section">
+        <h2>The Fairgrounds</h2>
+        <p><strong>The Caravantes Household</strong><br>
+        28387 Cottage Way<br>Murrieta, CA 92563</p>
+      </div>
+
+    </div>
+    
+    <script>
+      // 1. PASTE YOUR NEW APPS SCRIPT WEB APP URL HERE:
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkMvJvuMWsdBO8FBaSOx0baOw7TWKqTihQnGlKJI9qniCm9E44FZou72-qUSDWwefv/exec";
+
+      function switchView(viewId) {
+        const views = document.querySelectorAll('.view-section');
+        views.forEach(view => view.classList.remove('active'));
+
+        const navBtns = document.querySelectorAll('nav button');
+        navBtns.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(viewId).classList.add('active');
+        event.currentTarget.classList.add('active');
+      }
+
+      document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const submitBtn = document.getElementById('submit-btn');
+        const messageDiv = document.getElementById('form-message');
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending Ticket...";
+        messageDiv.innerText = "";
+
+        const formData = {
+          guestName: document.getElementById('guestName').value,
+          isAttending: document.getElementById('isAttending').value,
+          guestCount: document.getElementById('guestCount').value
+        };
+
+        // This replaces the old google.script.run command
+        fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Submit RSVP";
+          
+          if(data.result === "success") {
+            messageDiv.innerText = data.message;
+            messageDiv.style.color = "green";
+            document.getElementById('rsvp-form').reset();
+          } else {
+            messageDiv.innerText = "Error: " + data.message;
+            messageDiv.style.color = "red";
+          }
+        })
+        .catch(error => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Submit RSVP";
+          messageDiv.innerText = "Error connecting to server. Please try again.";
+          messageDiv.style.color = "red";
+        });
+      });
+    </script>
+  </body>
+</html>
