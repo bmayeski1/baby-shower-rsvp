@@ -22,7 +22,7 @@ body {
 
 .app-container {
   width: 100%;
-  max-width: 800px; 
+  max-width: 600px; 
   min-height: 100vh;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   background-color: transparent;
