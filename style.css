@@ -30,10 +30,9 @@ body {
   width: 100%;
   max-width: 600px; 
   min-height: 100vh;
-  /* Darker shadow to lift it off the background */
   box-shadow: 0 0 40px rgba(0,0,0,0.4); 
-  /* Solid parchment color to block the rays */
-  background-color: #fdfaf3; 
+  /* Shifted from the white tint to a warm, browner vintage paper tone */
+  background-color: #e8d6b3; 
   border-left: 4px solid var(--circus-gold);
   border-right: 4px solid var(--circus-gold);
   display: flex;
