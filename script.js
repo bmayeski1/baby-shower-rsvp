@@ -28,7 +28,6 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     guestCount: document.getElementById('guestCount').value
   };
 
-  // This replaces the old google.script.run command
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
