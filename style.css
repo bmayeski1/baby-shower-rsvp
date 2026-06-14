@@ -9,14 +9,13 @@
 
 body {
   font-family: 'Playfair Display', serif;
-  background-color: var(--parchment);
+  background-color: #e8dbbc; /* A slightly darker base color */
   
-  /* Layer 1: The soft vignette shadow */
-  /* Layer 2: The repeating sunburst rays using a faded gold */
+  /* Bolder, more visible sunburst rays */
   background-image: 
-    radial-gradient(circle, rgba(249, 245, 237, 0.4) 0%, rgba(232, 219, 188, 0.9) 100%),
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(196, 155, 71, 0.08) 0deg 9deg, transparent 9deg 18deg);
-  background-attachment: fixed; /* Keeps the rays anchored in place when you scroll! */
+    radial-gradient(circle, rgba(249, 245, 237, 0.4) 0%, rgba(232, 219, 188, 0.7) 100%),
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(196, 155, 71, 0.25) 0deg 9deg, transparent 9deg 18deg);
+  background-attachment: fixed;
   
   color: var(--text-dark);
   margin: 0;
@@ -31,12 +30,16 @@ body {
   width: 100%;
   max-width: 600px; 
   min-height: 100vh;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  background-color: transparent;
+  /* Darker shadow to lift it off the background */
+  box-shadow: 0 0 40px rgba(0,0,0,0.4); 
+  /* Solid parchment color to block the rays */
+  background-color: #fdfaf3; 
   border-left: 4px solid var(--circus-gold);
   border-right: 4px solid var(--circus-gold);
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
 nav {
@@ -211,4 +214,33 @@ button.submit-btn:hover {
   pointer-events: none;
   white-space: nowrap;
   letter-spacing: 5px;
+}
+
+/* --- Vintage Side Filigree --- */
+.filigree {
+  position: fixed;
+  top: 50%;
+  width: 18vw; 
+  max-width: 250px;
+  height: 80vh;
+  z-index: 1; /* Keeps it behind the main app container */
+  pointer-events: none; /* Prevents it from interfering with clicks */
+}
+
+.filigree-left {
+  left: 2%;
+  transform: translateY(-50%);
+}
+
+.filigree-right {
+  right: 2%;
+  /* The scaleX(-1) perfectly mirrors the left-side design! */
+  transform: translateY(-50%) scaleX(-1); 
+}
+
+/* Hide the filigree on mobile screens so it doesn't get cluttered */
+@media (max-width: 900px) {
+  .filigree {
+    display: none;
+  }
 }
