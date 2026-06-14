@@ -24,32 +24,40 @@
       </div>
 
       <div id="view-rsvp" class="view-section">
-        <h2>Admit One (or more!)</h2>
-        <p><em>Admission tickets close by<br>Sunday, August 16th, 2026</em></p>
         
-        <form id="rsvp-form">
-          <div>
-            <label for="guestName">Name(s):</label>
-            <input type="text" id="guestName" required placeholder="John & Jane Doe">
+        <div class="ticket">
+          <div class="ticket-header">
+            <h2>Admit One</h2>
+            <p style="margin: 5px 0 0 0; font-size: 1.1rem; color: var(--circus-red); font-family: 'Playfair Display', serif;"><em>(or more!)</em></p>
           </div>
           
-          <div>
-            <label for="isAttending">Will you be joining the circus?</label>
-            <select id="isAttending" required>
-              <option value="" disabled selected>Select an option...</option>
-              <option value="Yes">Yes, wouldn't miss it!</option>
-              <option value="No">No, sadly I cannot attend.</option>
-            </select>
-          </div>
+          <p style="text-align: center; margin-top: 0; margin-bottom: 25px;"><em>Admission tickets close by<br>Sunday, August 16th, 2026</em></p>
+          
+          <form id="rsvp-form">
+            <div>
+              <label for="guestName">Name(s):</label>
+              <input type="text" id="guestName" required placeholder="John & Jane Doe">
+            </div>
+            
+            <div>
+              <label for="isAttending">Will you be joining the circus?</label>
+              <select id="isAttending" required>
+                <option value="" disabled selected>Select an option...</option>
+                <option value="Yes">Yes, wouldn't miss it!</option>
+                <option value="No">No, sadly I cannot attend.</option>
+              </select>
+            </div>
 
-          <div>
-            <label for="guestCount">Total number in your party:</label>
-            <input type="number" id="guestCount" required min="0" max="10" placeholder="1">
-          </div>
+            <div>
+              <label for="guestCount">Total number in your party:</label>
+              <input type="number" id="guestCount" required min="0" max="10" placeholder="1">
+            </div>
 
-          <button type="submit" id="submit-btn" class="submit-btn">Submit RSVP</button>
-        </form>
-        <div id="form-message"></div>
+            <button type="submit" id="submit-btn" class="submit-btn">Punch Ticket</button>
+          </form>
+          <div id="form-message"></div>
+        </div>
+
       </div>
 
       <div id="view-registry" class="view-section">
